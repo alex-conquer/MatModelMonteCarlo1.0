@@ -4,25 +4,25 @@
 
 class Generator {
   public:
-    bool IsDiskInVector();
-    double GeneratorMonteCarlo_Height();
-    double GeneratorMonteCarlo_Fi();
-    double GeneratorMonteCarlo_Teta();
-    double GeneratorMonteCarlo_Gamma();
-    RandomValues GeneratorMonteCarlo_Cylinder();
-    Coordinates GeneratorMonteCarlo_GVector(Coordinates& coordinates);
+    bool isDiskInVector();
+    double generateMonteCarlo_Height();
+    double generatorMonteCarlo_Fi();
+    double generateMonteCarlo_Teta();
+    double generateMonteCarlo_Gamma();
+    RandomValues generateMonteCarlo_Cylinder();
+    Coordinates generateMonteCarlo_GVector(Coordinates& coordinates);
 
-    int GeneratorMonteCarlo_index();
-    void LookDiskIndexes();
-    double GeneratorMonteCarlo_Point(int index);
-    RandomValues GeneratorMonteCarlo_Disk();
+    int generateMonteCarlo_index();
+    void lookDiskIndexes();
+    double generateMonteCarlo_Point(int index);
+    RandomValues generateMonteCarlo_Disk();
 
-    RandomValues PlaceForMolecul();
+    RandomValues placeForMolecul();
 
-    double CylindersArea();
-    double DiskArea();
-    Coeficients Distribution();
-    findingCylinder FindCylinderIndex(double height);
+    double findCylindersArea();
+    double findDiskArea();
+    Coeficients makeDistributionArea();
+    FindingCylinder findCylinderIndex(double height);
 };
 
 #endif // GENERATOR_H

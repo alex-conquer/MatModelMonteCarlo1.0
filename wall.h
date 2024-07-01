@@ -32,7 +32,7 @@ struct RandomValues {
 };
 
 
-struct findingCylinder {
+struct FindingCylinder {
     int index = 0;
     double diff;
 };

@@ -38,7 +38,7 @@ private:
 
 private slots:
     void readingValues();
-    void CalculateOfPrecentageMolecules();
+    void calculateOfPrecentageMolecules();
     void preCalculate();
 };
 

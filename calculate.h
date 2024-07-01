@@ -4,25 +4,25 @@
 
 class Calculate {
 public:
-    void IntersectionSearch(Coordinates& NewCoordinates, int k);
-    bool FlightMolecule_Disk();
+    void intersectionSearch(Coordinates& newCoordinates, int k);
+    bool flightMolecule_Disk();
 
-    Coordinates FlightMolecule(Coordinates& coordinates);
-    Coordinates FlightMoleculeCylinder(Coordinates& coordinates, int i);
-    Coordinates FlightMoleculeDisk(Coordinates& coordinates, int i);
+    Coordinates calculateFlightMolecule(Coordinates& coordinates);
+    Coordinates calculateFlightMoleculeCylinder(Coordinates& coordinates, int i);
+    Coordinates calculateFlightMoleculeDisk(Coordinates& coordinates, int i);
 
-    void IterationForCylinder(Coordinates& coordinates);
-    void IterationForDisk(Coordinates& coordinates);
+    void iterationForCylinder(Coordinates& coordinates);
+    void iterationForDisk(Coordinates& coordinates);
 
-    int Core(int countMoleculs, int iteration);
+    int core(int countMoleculs, int iteration);
 
-    void CreatingPortal(int val2 = 0, bool flag = false);
-    void DownOrUp(int count);
+    void creatingPortal(int val2 = 0, bool flag = false);
+    void DefineDownOrUp(int count);
 
 
-    double FindDiskCoordZ(int index);
-    bool CheckForBoundCondition(Coordinates coordinates, Сylinder* cylinder);
-    void Iteration(Coordinates& NewCoordinates, int iteration);
+    double findDiskCoordZ(int index);
+    bool checkForBoundCondition(Coordinates coordinates, Сylinder* cylinder);
+    void iteration(Coordinates& NewCoordinates, int iteration);
 
     void test(){};
 };

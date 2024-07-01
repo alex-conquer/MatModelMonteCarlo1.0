@@ -130,7 +130,7 @@ void Interface::preCalculate() {
     window->show();
 
     connect(b_back, &QPushButton::clicked, window, &QPushButton::close);
-    connect(b_next, &QPushButton::clicked, this, &Interface::CalculateOfPrecentageMolecules);    
+    connect(b_next, &QPushButton::clicked, this, &Interface::calculateOfPrecentageMolecules);
 }
 // окно которое вылезает после нажатия кнопки Next
 void Interface::createFinalWindow(double exitMolecules, double amount_mol) {
@@ -161,7 +161,7 @@ void Interface::createFinalWindow(double exitMolecules, double amount_mol) {
 }
 
 // при нажатии кнопки next вызывается эта функция
-void Interface::CalculateOfPrecentageMolecules() {
+void Interface::calculateOfPrecentageMolecules() {
     bool f_cond;
     bool s_cond;
     double exitMolecules;
@@ -179,7 +179,7 @@ void Interface::CalculateOfPrecentageMolecules() {
         return;
     }
     // процент молекул должен быть double поэтому приводим к double
-    exitMolecules = static_cast<double>(calcul.Core(amount_mol, amount_iter));
+    exitMolecules = static_cast<double>(calcul.core(amount_mol, amount_iter));
     d_amount_mol = static_cast<double>(amount_mol);
     // вызываем окно, в котором выводится процент вылетевших молекул
     createFinalWindow(exitMolecules, d_amount_mol);
@@ -209,7 +209,7 @@ void Interface::readingValues() {
 в начало и конец модели там где это необходимо*/
     if (isBuildingCorrectly(val1, val2, selected_text, windowError)) {
         if (selected_text == "Cylinder") {
-            if (wall.indexNumber == -1){calcul.CreatingPortal(val2, true);}
+            if (wall.indexNumber == -1){calcul.creatingPortal(val2, true);}
             Сylinder* cylinder = new Сylinder(val2, val1);
             stack.push(cylinder);
             vector.push_back(cylinder);
@@ -217,7 +217,7 @@ void Interface::readingValues() {
             count++;
             qDebug() << "Cylinder" << Qt::endl;
         } else if (selected_text == "Disk") {
-            if ((wall.indexNumber == -1)&&(val2>0)){calcul.CreatingPortal(val2, true);}
+            if ((wall.indexNumber == -1)&&(val2>0)){calcul.creatingPortal(val2, true);}
             Disk* disk = new Disk(val1, val2);
             // здесь мои изменения
             if (vector.size() == 0) {
@@ -283,7 +283,7 @@ bool Interface::isBuildingCorrectly(double val1, double val2, const QString sele
     }
 }
 
-void Calculate::CreatingPortal(int val2, bool flag)
+void Calculate::creatingPortal(int val2, bool flag)
 {   if (flag == true) {
         Disk* disk = new Disk(val2, 0);
         disk->portal = true;
